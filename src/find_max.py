@@ -1,7 +1,9 @@
 def find_max(numbers):
+    if not numbers:
+        raise ValueError("List must not be empty")
+
     max_value = numbers[0]
-    if numbers[1] > max_value:
-        max_value = numbers[1]
-    if len(numbers) > 2 and numbers[2] > max_value:
-        max_value = numbers[2]
+    for number in numbers:
+        if number > max_value:
+            max_value = number
     return max_value
